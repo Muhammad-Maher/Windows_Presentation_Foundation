@@ -1,0 +1,78 @@
+﻿<Window x:Class="Task2_inkCanavas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task2_inkCanavas"
+        mc:Ignorable="d"
+        Title="Ink Canvas" Height="450" Width="800">
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border CornerRadius="5" BorderBrush="Red" Margin="5" BorderThickness="4" Background="GhostWhite">
+            <InkCanvas Name="InkCanvas" Margin="4"/>
+        </Border>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center">
+
+            <GroupBox Margin="10" Padding="5" Header="Colors">
+                <ContentControl.Content>
+                    <StackPanel>
+                        <RadioButton Content="Red" Checked="Colors"/>
+                        <RadioButton Content="Blue" Checked="Colors"/>
+                        <RadioButton Content="Green" Checked="Colors"/>
+                        <RadioButton Content="Magenta" Checked="Colors"/>
+                    </StackPanel>
+                </ContentControl.Content>
+            </GroupBox>
+
+            <GroupBox Margin="10" Padding="5" Header="Modes">
+                <ContentControl.Content>
+                    <StackPanel>
+                        <RadioButton Content="Ink" Checked="Modes"/>
+                        <RadioButton Content="Select" Checked="Modes"/>
+                        <RadioButton Content="EraseByPoint" Checked="Modes"/>
+                        <RadioButton Content="EraseByStroke" Checked="Modes"/>
+                    </StackPanel>
+                </ContentControl.Content>
+            </GroupBox>
+
+            <GroupBox Margin="10" Padding="5" Header="Drawing Shapes">
+                <ContentControl.Content>
+                    <StackPanel>
+                        <RadioButton Content="Ellipse" Checked="Drawing_Shapes"/>
+                        <RadioButton Content="Rectangle" Checked="Drawing_Shapes"/>
+                    </StackPanel>
+                </ContentControl.Content>
+            </GroupBox>
+
+            <GroupBox Margin="10" Padding="5" Header="Brush Size">
+                <ContentControl.Content>
+                    <StackPanel>
+                        <RadioButton Content="Small" Checked="Brush_Size"/>
+                        <RadioButton Content="Normal" Checked="Brush_Size"/>
+                        <RadioButton Content="Large" Checked="Brush_Size"/>
+                    </StackPanel>
+                </ContentControl.Content>
+            </GroupBox>
+
+            <WrapPanel Width="300" HorizontalAlignment="Center" VerticalAlignment="Center">
+                
+                <Button Content="New" Width="80" Height="30" Margin="5" Click="createNewCanavas" />
+                <Button Content="Save" Width="80" Height="30" Margin="5" Click="saveCanavas" />
+                <Button Content="Load" Width="80" Height="30" Margin="5" Click="loadCanavas" />
+
+                <Button Content="Copy" Width="80" Height="30" Margin="5" Click="copyCanavas" />
+                <Button Content="Cut" Width="80" Height="30" Margin="5" Click="cutCanavas" />
+                <Button Content="Paste" Width="80" Height="30" Margin="5" Click="pasteCanavas" />
+
+            </WrapPanel>
+            
+        </StackPanel>
+
+    </Grid>
+</Window>
